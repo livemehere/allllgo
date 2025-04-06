@@ -7,7 +7,7 @@
 
 ## comparison
 
-- 10. Hash Map (2ms), 9. Brute Force(30ms)
-- x15 save times
+- Hash map approach significantly reduces `speed`
+- C++ implementation uses less `memory`
 
-![sol1 vs sol2](sol1vssol2.png)
+![result of 4](image.png)
