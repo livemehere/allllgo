@@ -8,6 +8,7 @@ using namespace std;
 class Solution {
     public:
         bool isValid(string s) {
+            if(s.size() % 2 !=0) return false;
             unordered_map<char,char> map = {
                 {'(',')'},
                 {'[',']'},
