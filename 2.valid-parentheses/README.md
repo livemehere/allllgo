@@ -8,6 +8,9 @@
 
 - C++ implementation uses less `memory`
 
+![alt text](cpp.png)
+![alt text](js.png)
+
 ## Learn
 
 - `c++` has `unordered_map` and `stack` in `STL`
