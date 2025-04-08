@@ -17,3 +17,4 @@
 
 - `c++` has two type of `null`. `NULL` is a macro that expands to `0`, `nullptr` is a keyword that represents a null pointer constant.
 - `nullptr` is type-safe and can be used in any context where a pointer is expected while `NULL` is an integer constant that can be implicitly converted to any pointer type.
+- Recursive approach is less efficient in terms of space complexity due to the function call stack. but readability is better.
