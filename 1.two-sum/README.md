@@ -7,7 +7,10 @@
 
 ## comparison
 
-- Hash map approach significantly reduces `speed`
 - C++ implementation uses less `memory`
 
 ![result of 4](image.png)
+
+## Learn
+
+- Hash map approach significantly reduces `speed`
