@@ -7,7 +7,7 @@
 
 ## comparison
 
-- js and c++ offer nearly identical performance in terms of speed. However, c++ cna be significantly more memory efficient using up to 5 times less memory. Because of direct pointer manipulation and lower-level memory control.
+- `js` and `c++` offer nearly identical performance in terms of speed. However, c++ cna be significantly more memory efficient using up to 5 times less memory. Because of direct pointer manipulation and lower-level memory control.
 
 ## Performance Comparison
 
