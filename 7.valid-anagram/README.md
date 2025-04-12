@@ -2,7 +2,7 @@
 
 | No  | Approach | Time Complexity | Space Complexity | Summary                                     |
 | --- | -------- | --------------- | ---------------- | ------------------------------------------- |
-| 1   | HashMap  | O(n)            | O(n)             | use HashMap to count character frequencies. |
+| 1   | HashMap  | O(n+m)          | O(n)             | use HashMap to count character frequencies. |
 
 ## comparison
 
