@@ -8,34 +8,17 @@
 var floodFill = function (image, sr, sc, color) {
   const targetColor = image[sr][sc];
   if (targetColor === color) return image;
-  const visited = {};
-  adjacent(sr, sc, targetColor);
-  function adjacent(r, c, v) {
-    if (v === targetColor) {
-      image[r][c] = color;
-    }
-    console.log(`visit ${r}-${c}`);
-    const top = [r - 1, c];
-    const right = [r, c + 1];
-    const bottom = [r + 1, c];
-    const left = [r, c - 1];
-    const sides = [top, right, bottom, left];
-    sides.forEach(([r, c]) => {
-      let color;
-      try {
-        color = image[r][c];
-        console.log(color, targetColor);
-        if (
-          color !== undefined &&
-          !visited[`${r}${c}`] &&
-          color === targetColor
-        ) {
-          adjacent(r, c, color);
-        }
-        const key = `${r}${c}`;
-        visited[key] = true;
-      } catch (e) {}
-    });
+  adjacent(sr, sc);
+  function adjacent(r, c) {
+    if (r < 0 || r >= image.length || c < 0 || c >= image[0].length) return;
+    const v = image[r][c];
+    if (v !== targetColor) return;
+    image[r][c] = color;
+
+    adjacent(r - 1, c);
+    adjacent(r, c + 1);
+    adjacent(r + 1, c);
+    adjacent(r, c - 1);
   }
   return image;
 };
