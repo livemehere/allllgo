@@ -18,20 +18,34 @@ var solution = function(isBadVersion) {
      * @return {integer} The first bad version
      */
     return function(n) {
-        let latestBadVersion;
-        let cur = n;
-        while(cur !== 0){
+        if(isBadVersion(1)) return 1;
+
+        let latestBad = n;
+        let latestGood = 1;
+        let left = 1;
+        let right = n;
+        let mid;
+        
+        while(left < right){            
+            mid = Math.floor((left+right)/2)
             
-            if(isBadVersion(cur)){
-                latestBadVersion = cur;
+            if(isBadVersion(mid)){
+                // should found good version from previous
+                latestBad = mid;
+                right = mid;
             }else{
-                return cur + 1;
+                // should found bad version from after
+                latestGood = mid;
+                left = mid;
             }
-            cur--;
+            // found.
+            if(latestBad - latestGood <= 1){
+                return latestBad;
+            }
         }
-        return latestBadVersion;
+        return latestBad;
     };
 };
 
-const fn = solution((n)=>{ return n >= 4})
-console.log(fn(5));
+const fn = solution((n)=>{ return n == 1})
+console.log(fn(3));
