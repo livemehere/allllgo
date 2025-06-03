@@ -17,10 +17,7 @@ public:
 
         for (char c : ransomNote)
         {
-            auto it = m.find(c);
-            if (it == m.end())
-                return false;
-            int rest = (it->second) - 1;
+            int rest = --m[c];
             if (rest < 0)
                 return false;
             m[c] = rest;
