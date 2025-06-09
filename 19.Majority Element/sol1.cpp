@@ -1,27 +1,24 @@
-struct ListNode
-{
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
 
 class Solution
 {
 public:
-    ListNode *reverseList(ListNode *head)
+    int majorityElement(vector<int> &nums)
     {
-        ListNode *prev = nullptr;
-        ListNode *cur = head;
+        float v = nums.size() / 2;
+        unordered_map<int, int> m;
 
-        while (cur != nullptr)
+        for (int n : nums)
         {
-            ListNode *next = cur->next;
-            cur->next = prev;
-            prev = cur;
-            cur = next;
+            int _v = m.find(n) != m.end() ? m[n] : 1;
+            if (_v > v)
+                return n;
+            m[n] = _v + 1;
         }
-        return prev;
+
+        return 0;
     }
 };

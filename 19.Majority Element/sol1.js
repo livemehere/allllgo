@@ -1,23 +1,13 @@
- function ListNode(val, next) {
-      this.val = (val===undefined ? 0 : val)
-      this.next = (next===undefined ? null : next)
-  }
-
-
 /**
- * @param {ListNode} head
- * @return {ListNode}
+ * @param {number[]} nums
+ * @return {number}
  */
-var reverseList = function(head) {
-    let prev = null;
-    let cur = head;
-
-    while(cur !== null){
-        const next = cur.next;
-        cur.next = prev;
-        prev = cur;
-        cur = next;
+var majorityElement = function(nums) {
+    const v = nums.length/2;
+    const m = new Map();
+    for(const n of nums){
+        const _v = m.get(n) ?? 1;
+        if(_v > v) return n;
+        m.set(n,_v+1);
     }
-
-    return prev;
 };
