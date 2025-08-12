@@ -15,7 +15,7 @@ var insert = function(intervals, newInterval) {
         // 현재 범위가, 신규 범위보다 작을 때 = 넘어감.
         if(curEnd < newStart){ // [n,n, ... [] ,]
             res.push(curInterval);
-        }else if (curStart > newEnd){ // 현재 범위가, 신규 범위와 겹치지 않고, 더 클 때 
+        }else if (curStart > newEnd){ // 현재 범위가, 신규 범위와 겹치지 않고, 더 클 때 =
             if(!merged){
                 res.push([newStart,newEnd]);    
                 merged = true;
